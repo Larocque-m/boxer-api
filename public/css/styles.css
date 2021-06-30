@@ -19,8 +19,13 @@ li {
   margin: 1ch;
 }
 
+.Date_of_fight {
+  width: 50%;
+  text-align: left;
+}
+
 .Fighter {
-  width: 10%;
+  width: 50%;
   text-align: left;
 }
 
@@ -28,3 +33,4 @@ li {
   width: 50%;
   text-align: left;
 }
+
