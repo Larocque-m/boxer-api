@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const fights = require('./fights')
+const { getALlChampions } = require('./controller/fights')
 
 app.set('view engine', 'pug')
 
@@ -11,6 +12,7 @@ app.get('/', (request, response) => {
   response.render('index', { fights })
 })
 
+app.get('/', getALlChampions)
 
 app.all('*', (request, response) => {
   return response.sendStatus(404)
