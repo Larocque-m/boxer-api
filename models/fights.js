@@ -6,6 +6,7 @@ const fights = (connection, Sequelize) => {
       date_of_fight: { type: Sequelize.DATE },
       fighter: { type: Sequelize.STRING },
       outcome: { type: Sequelize.STRING },
+      snapped: { type: Sequelize.BOOLEAN, defaultValue: 0 }
     }, { paranoid: true })
 }
 
