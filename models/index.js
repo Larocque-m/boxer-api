@@ -1,8 +1,13 @@
 const Sequelize = require('sequelize')
 const fightsModel = require('./fights')
+const allConfigs = require('../configs/sequelize')
 
-const connection = new Sequelize('fights', 'newUser', 'Champ$$$',
-  { host: 'localhost', dialect: 'mysql' })
+const environment = process.env.NODE_ENV || 'development'
+const config = allConfigs[environment]
+
+const connection = new Sequelize(config.database, config.username, config.password, {
+  host: config.host, dialect: config.dialect
+})
 
 const fights = fightsModel(connection, Sequelize)
 

@@ -1,8 +1,6 @@
-'use strict'
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('fights', [{
+    return queryInterface.bulkInsert('fights', [{
       id: 1,
       champions: 'Floyd Mayweather',
       date_of_fight: '1996-10-11',
@@ -306,6 +304,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('fights')
+    return queryInterface.bulkDelete('fights')
   }
 }
