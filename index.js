@@ -1,17 +1,24 @@
 const express = require('express')
-const app = express()
 const fights = require('./fights')
-const { getALlChampions, getFighter } = require('./controller/fights')
+const { getALlChampions, showDocumentation, getFighter } = require('./controller/fights')
 
-app.set('view engine', 'pug')
+const app = express()
 
 app.use(express.static('public'))
 
+app.set('view engine', 'pug')
 
 app.get('/', (request, response) => {
-  response.render('index', { fights })
+  return response.render('index', { fights })
 })
 
+app.get('/singleFights/:id', (request, response) => {
+  const { id } = request.params
+  const match = fights.find((match) => match.number === parseInt(id))
+
+  return response.render('singleFights', { match })
+})
+app.get('/documentation', showDocumentation)
 app.get('/fights', getALlChampions)
 app.get('/fights/:id', getFighter)
 
