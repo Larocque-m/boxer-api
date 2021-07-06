@@ -17,12 +17,12 @@ app.get('/', getAllFighters)
 app.get('/fighter/:id', getFighterById)
 app.get('/documentation', showDocumentation)
 
-app.get('/api/fighter/', getFighters)
-app.get('/api/fighter/:name', getFighterByName)
-app.get('/api/match', getMatches)
-app.get('/api/match/:identifier', getMatchById)
-app.get('/api/outcome/:outcome', getMatchByOutcome)
-app.post('/api/fighter', addNewFighter)
+app.get('/fighter/', getFighters)
+app.get('/fighter/:name', getFighterByName)
+app.get('/match', getMatches)
+app.get('/match/:identifier', getMatchById)
+app.get('/outcome/:outcome', getMatchByOutcome)
+app.post('/fighter', addNewFighter)
 
 app.all('*', (request, response) => {
   return response.sendStatus(404)
