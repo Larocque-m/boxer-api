@@ -263,11 +263,149 @@ module.exports = {
       fighter: 'Conon McGregor',
       outcome: 'TKO10',
       fighterId: 1
+    }, {
+      date_of_fight: '2008-03-08',
+      fighter: 'Gary Morris',
+      outcome: 'TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2008-05-03',
+      fighter: 'Mo Taylor',
+      outcome: 'TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2008-06-28',
+      fighter: 'Artemji Sitenkov',
+      outcome: 'L Submission (Kneebar)',
+      fighterId: 2
+    }, {
+      date_of_fight: '2008-12-12',
+      fighter: 'Stephen Bailey',
+      outcome: 'TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2010-10-09',
+      fighter: 'Connor Dillon',
+      outcome: 'TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2010-11-27',
+      fighter: 'Joe Duffy',
+      outcome: 'L Submission (Arm Triangle)',
+      fighterId: 2
+    }, {
+      date_of_fight: '2011-02-12',
+      fighter: 'Hugh Brady',
+      outcome: 'KO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2011-03-12',
+      fighter: 'Mike Wood',
+      outcome: 'KO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2011-04-16',
+      fighter: 'Paddy Doherty',
+      outcome: 'KO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2011-06-11',
+      fighter: 'Artur Sowinski',
+      outcome: 'KO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2011-09-08',
+      fighter: 'Aaron Jahnsen',
+      outcome: 'KO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2012-02-18',
+      fighter: 'Steve O\'Keefe',
+      outcome: 'KO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2012-06-02',
+      fighter: 'Dave Hill',
+      outcome: 'Submission (Rear Naked Choke)',
+      fighterId: 2
+    }, {
+      date_of_fight: '2012-12-31',
+      fighter: 'Ivan Buchinger',
+      outcome: 'KO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2013-04-06',
+      fighter: 'Marcus Brimage',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2013-08-17',
+      fighter: 'Max Holloway',
+      outcome: 'Decision - Unanimous',
+      fighterId: 2
+    }, {
+      date_of_fight: '2014-07-19',
+      fighter: 'Diego Brandao',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2014-09-27',
+      fighter: 'Dustin Poirier',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2015-01-18',
+      fighter: 'Dennis Siver',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2015-07-11',
+      fighter: 'Chad Mendes',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2015-12-12',
+      fighter: 'Jose Aldo',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2016-03-05',
+      fighter: 'Nate Diaz',
+      outcome: 'L Submission',
+      fighterId: 2
+    }, {
+      date_of_fight: '2016-08-20',
+      fighter: 'Nate Diaz',
+      outcome: 'Decision - Majority',
+      fighterId: 2
+    }, {
+      date_of_fight: '2016-11-12',
+      fighter: 'Eddie Alvarez',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2018-10-06',
+      fighter: 'Khabib Nurmagonmedov',
+      outcome: 'L Submission',
+      fighterId: 2
+    }, {
+      date_of_fight: '2020-01-18',
+      fighter: 'Donald Cerrone',
+      outcome: 'KO/TKO',
+      fighterId: 2
+    }, {
+      date_of_fight: '2021-01-23',
+      fighter: 'Dustin Poirier',
+      outcome: 'L KO/TKO',
+      fighterId: 2
     }
+
     ])
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('fights')
+    await queryInterface.bulkDelete('matches')
+
+    return queryInterface.bulkInsert('fights')
   }
 }

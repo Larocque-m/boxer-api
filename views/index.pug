@@ -6,3 +6,10 @@ html
     h2
       a(href='/documentation', class= 'docHeader')
         p API Documentation
+    h2 Fights 
+    ul
+      for fight in fights
+        li 
+          a(href=`/fighter/${fighter.id}`, class= 'FighterName')
+            p= fighter.name
+            

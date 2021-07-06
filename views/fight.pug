@@ -1,0 +1,25 @@
+html
+  include partials/head.pug
+  body 
+    h1= fighter.name
+    h4
+      a(href='/', class= 'backHome')
+        p HomePage
+    h3= `Record: ${fighter.record}`
+    a(href=fighter.website, class= 'website')
+      p= fighter.website
+    table
+      caption Matches
+      thead 
+        tr
+          th Date of Fight
+          th Fighter
+          th Outcome 
+      tbody 
+        for matches in fighter.matches 
+          tr
+            td(class="match")= match.date_of_fight 
+            td(class="match")= match.fighter
+            td(class="match")= match.outcome   
+              
+                

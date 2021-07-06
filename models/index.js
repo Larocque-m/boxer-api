@@ -1,8 +1,13 @@
 const Sequelize = require('sequelize')
-const fightsModel = require('./fights')
 const allConfigs = require('../configs/sequelize')
+const Fights = require('./Fights')
 
-const environment = process.env.NODE_ENV || 'development'
+const fightsModel = require('./Fights')
+const Matches = require('./Matches')
+const matchesModel = require('./Matches')
+
+
+const environment = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 const config = allConfigs[environment]
 
 const connection = new Sequelize(config.database, config.username, config.password, {
@@ -10,5 +15,13 @@ const connection = new Sequelize(config.database, config.username, config.passwo
 })
 
 const fights = fightsModel(connection, Sequelize)
+const matches = matchesModel(connection, Sequelize, Fights)
 
-module.exports = { fights }
+matches.belongsTo(fights)
+fights.hasMany(matches)
+
+module.exports = {
+  fights,
+  matches,
+  Sequelize,
+}
