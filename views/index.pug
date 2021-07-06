@@ -8,7 +8,7 @@ html
         p API Documentation
     h2 Fights 
     ul
-      for fighter in fights
+      for fight in fights
         li 
           a(href=`/fighter/${fighter.id}`, class= 'FighterName')
             p= fighter.name
