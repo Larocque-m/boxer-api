@@ -2,13 +2,13 @@ html
   include partials/head.pug
   title Boxer Program - Flyod Mayweather
   body 
-    h1= fight.name
+    h1= fighter.name
     h4
       a(href='/', class= 'backHome')
         p HomePage
-    h3= `Record: ${fight.record}`
-    a(href=fight.website, class= 'website')
-      p= fight.website
+    h3= `Record: ${fighter .record}`
+    a(href=fighter.website, class= 'website')
+      p= fighter.website
     table
       caption Matches
       thead 
@@ -17,10 +17,9 @@ html
           th Fighter
           th Outcome 
       tbody 
-        for matches in fight.matches 
+        for match in fighter.matches 
           tr
             td(class="match")= match.date_of_fight
             td(class="match")= match.fighter
             td(class="match")= match.outcome 
-
                 
