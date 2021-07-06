@@ -31,13 +31,13 @@ const getMatchById = async (request, response) => {
 }
 
 
-const getMatchByFighter = async (request, response) => {
-  const { fighter } = request.params
+const getMatchByOutcome = async (request, response) => {
+  const { outcome } = request.params
 
   const match = await models.Matches.findAll({
     attributes: ['id', 'date_of_fight', 'fighter', 'outcome', 'fighterId'],
     where:
-        { fighter: { [models.Sequelize.Op.like]: `%${fighter}%` } },
+        { outcome: { [models.Sequelize.Op.like]: `%${outcome}%` } },
     include: [{
       model: models.Fights,
       attributes: ['id', 'name', 'record', 'nationality', 'website'],
@@ -51,4 +51,4 @@ const getMatchByFighter = async (request, response) => {
 
 
 
-module.exports = { getMatches, getMatchById, getMatchByFighter }
+module.exports = { getMatches, getMatchById, getMatchByOutcome }
