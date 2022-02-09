@@ -1,0 +1,15 @@
+html
+  include partials/head.pug 
+  title Boxer Program - Flyod Mayweather
+  body 
+    h1 The Champ -- Floyd Mayweather 
+    h2
+      a(href='/documentation', class= 'docHeader')
+        p API Documentation
+    h2 Fights 
+    ul
+      for fighter in fights
+        li 
+          a(href=`/fighter/${fighter.id}`, class= 'fighterName')
+            p= fighter.name
+            

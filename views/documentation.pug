@@ -1,0 +1,62 @@
+html
+  include partials/head.pug 
+    title Boxer Program - Flyod Mayweather
+    
+    body   
+         h3 We are looking at the complete fight record of Floyd Mayweather -- The Undefeated Champ and chanllengers like -- Conor McGregor 
+         br 
+         h3  This program's information on the fighter's record contains: 
+         p 
+         ul
+          li Name
+          li Record 
+          li Nationality
+          li Website  
+        h3 The Matches 
+        p 
+        u1 
+          li Date of Fight 
+          l1 Fighter 
+          l1 Outcome 
+        
+         h2 Using the API
+
+         h4 Get for how to Get the Fighters  
+         p
+         ul
+          li GET http://localhost:1337/
+
+         h4 Get for how to get one of the fighters 
+         p
+         ul
+          li GET http://localhost:1337//fighter/:id"fighter"
+
+         h4 Get for how to get the fighter by their name  
+         p
+         ul
+          li GET http://localhost:1337/fighter/:name"name"
+
+         h4 Get for the matches a fighter has been in 
+         p 
+         u1 
+          l1 Get http://localhost:1337/match"match" 
+
+         h4 Get for the matches id  
+         p 
+         u1 
+          l1 Get http://localhost:1337/match/:identifier"Id" 
+
+          h4 Get for the matches outcome  
+          p 
+          u1 
+           l1 Get http://localhost:1337/outcome/:outcome"outcome" 
+
+         h4 A Delete for a fighter that has lost to the champ 
+         p
+         ul
+          li GET http://localhost:1337/delete/"id"
+
+         h4 Adding the next fighter to the career record win for the champ 
+         p
+         ul
+          li POST http://localhost:1337 { "fighter": "fighter name", "date": "fight date", "outcome": "fight outcome" }
